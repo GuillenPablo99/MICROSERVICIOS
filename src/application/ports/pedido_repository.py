@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
-from src.domain.pedido import Pedido
+from domain.pedido import Pedido
 
 class PedidoRepository(ABC):
     @abstractmethod

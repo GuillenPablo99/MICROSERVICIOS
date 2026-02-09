@@ -1,6 +1,6 @@
 from typing import List, Optional
-from src.application.ports.pedido_repository import PedidoRepository
-from src.domain.pedido import Pedido
+from application.ports.pedido_repository import PedidoRepository
+from domain.pedido import Pedido
 
 class PedidoService:
     def __init__(self, repository: PedidoRepository):

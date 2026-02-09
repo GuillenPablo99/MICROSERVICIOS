@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from src.domain.user import User, UserCreate, UserUpdate
-from src.application.services.user_service import UserService
-from src.infraestructura.adapters.memory_user_repository import MemoryUserRepository
+from domain.user import User, UserCreate, UserUpdate
+from application.services.user_service import UserService
+from infraestructura.adapters.memory_user_repository import MemoryUserRepository
 
 router = APIRouter()
 

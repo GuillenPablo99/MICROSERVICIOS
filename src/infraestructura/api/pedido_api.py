@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from src.domain.pedido import Pedido
-from src.application.services.pedido_service import PedidoService
-from src.infraestructura.adapters.memory_pedido_repository import MemoryPedidoRepository
+from domain.pedido import Pedido
+from application.services.pedido_service import PedidoService
+from infraestructura.adapters.memory_pedido_repository import MemoryPedidoRepository
 
 router = APIRouter()
 pedido_repo = MemoryPedidoRepository()

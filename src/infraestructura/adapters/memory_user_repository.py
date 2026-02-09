@@ -1,6 +1,6 @@
 from typing import List, Optional
-from src.application.ports.user_repository import UserRepository
-from src.domain.user import User, UserUpdate
+from application.ports.user_repository import UserRepository
+from domain.user import User, UserUpdate
 
 class MemoryUserRepository(UserRepository):
     def __init__(self):
