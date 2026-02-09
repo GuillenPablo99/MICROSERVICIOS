@@ -20,7 +20,6 @@ class MemoryUserRepository(UserRepository):
     def update(self, user_id: str, user_data: UserUpdate) -> Optional[User]:
         if user_id in self._users:
             user = self._users[user_id]
-            # Solo actualizamos si los valores no son None (como en la lógica de la clase)
             if user_data.nombre:
                 user.nombre = user_data.nombre
             if user_data.email:

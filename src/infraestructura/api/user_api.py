@@ -5,7 +5,6 @@ from src.infraestructura.adapters.memory_user_repository import MemoryUserReposi
 
 router = APIRouter()
 
-# Inicialización (Como en la foto: se arman los componentes)
 user_repo = MemoryUserRepository()
 user_service = UserService(user_repo)
 

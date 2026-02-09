@@ -13,7 +13,6 @@ class User(BaseModel):
     email: str
     status: UserStatus = UserStatus.ACTIVE
 
-    # Comportamientos de dominio (como en la foto de clase)
     def activate(self):
         self.status = UserStatus.ACTIVE
         

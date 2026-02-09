@@ -3,11 +3,9 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     app_name: str = "Sistema Restaurante Hexagonal"
     
-    # Puertos solicitados en tu tarea
     user_service_port: int = 8001
     pedido_service_port: int = 8002
     
-    # Configuración de desarrollo
     debug: bool = True
 
     class Config:
