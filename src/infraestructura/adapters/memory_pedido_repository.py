@@ -1,23 +1,26 @@
-from typing import List, Optional
-from application.ports.pedido_repository import PedidoRepository
 from domain.pedido import Pedido
 
-class MemoryPedidoRepository(PedidoRepository):
+class MemoryPedidoRepository:
     def __init__(self):
-        self._pedidos = {}
+        self.pedidos = []
 
-    def save(self, pedido: Pedido) -> Pedido:
-        self._pedidos[pedido.id_pedido] = pedido
+    def save(self, pedido: Pedido):
+        self.pedidos.append(pedido)
         return pedido
 
-    def find_by_id(self, pedido_id: str) -> Optional[Pedido]:
-        return self._pedidos.get(pedido_id)
+    def get_by_id(self, id_pedido: str):
+        return next((p for p in self.pedidos if p.id_pedido == id_pedido), None)
 
-    def find_all(self) -> List[Pedido]:
-        return list(self._pedidos.values())
+    def update(self, id_pedido: str, datos_nuevos: dict):
+        pedido = self.get_by_id(id_pedido)
+        if pedido:
+            pedido.total = datos_nuevos.get("total", pedido.total)
+            return pedido
+        return None
 
-    def delete(self, pedido_id: str) -> bool:
-        if pedido_id in self._pedidos:
-            del self._pedidos[pedido_id]
+    def delete(self, id_pedido: str):
+        pedido = self.get_by_id(id_pedido)
+        if pedido:
+            self.pedidos.remove(pedido)
             return True
         return False
